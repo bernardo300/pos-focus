@@ -23,6 +23,10 @@ public class UsuarioService {
         return repository.save(usuario);
     }
 
+    public Usuario updateUsuario(Usuario usuario){
+        return repository.save(usuario);
+    }
+
     public List<Usuario> getAll() {
         return repository.findAll();
     }

@@ -32,13 +32,10 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotNull @NonNull
     private String nome;
 
-    @NotNull @NonNull @NotBlank
     private String email;
 
-    @Size(min = 3, max = 5,message = "Senha deve ter entre 3 e 5 caracteres")
     private String senha;
 
     @OneToMany(fetch = FetchType.LAZY)
