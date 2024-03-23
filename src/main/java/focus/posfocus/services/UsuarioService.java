@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import focus.posfocus.models.Usuario;
@@ -20,6 +21,8 @@ public class UsuarioService {
     }
 
     public Usuario createUsuario(Usuario usuario){
+        var senha = new BCryptPasswordEncoder().encode(usuario.getPassword());
+        usuario.setPassword(senha);
         return repository.save(usuario);
     }
 
